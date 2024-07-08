@@ -201,7 +201,7 @@ background-color:#94ae44;
 display:table;
 width:100%;
 padding:0;
-background:url(../images/intro-bg.jpg) no-repeat center bottom;
+/* background:url(../images/intro-bg.jpg) no-repeat center bottom; */
 background-color:#e5e5e5;
 -webkit-background-size:cover;
 -moz-background-size:cover;

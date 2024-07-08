@@ -17,15 +17,27 @@
       color: white;
       padding: 20px;
   }
-  .container {
-      text-align: center;
-  }
   .btn-custom {
       background-color: #000;
       color: #fff;
       padding: 10px 20px;
       text-decoration: none;
       border-radius: 5px;
+  }
+  @media (max-width: 750px) {
+    header .intro-text {
+    padding-top: 106px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+.intro h1 {
+    color: #fff;
+    font-size: 50px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
   }
 </style>
 <style type="text/css">
@@ -86,9 +98,9 @@
         <div class="container">
             <div class="row">
                 <div class="intro-text">
-                    <h1><strong>farish slider dekho</strong> <span>/</span> Interior Design Studio</h1>
-                    <p>Discover the art of interior design, crafted with elegance and charm.</p>
-                    <p>9718632171,9718632400</p>
+                  <h1><strong>GS</strong> <span>/</span> Interior Design Studio</h1>
+                  <p>Discover the art of interior design, crafted with elegance and charm.</p>
+                  <p>9718632171,9718632400</p>
                     <a href="#about" class="btn btn-custom btn-lg page-scroll">Learn More</a>
                 </div>
             </div>
@@ -96,22 +108,67 @@
     </div>
 </div>
 
+<div id="intro3" class="intro active">
+  <div class="overlay">
+      <div class="container">
+          <div class="row">
+              <div class="intro-text">
+                <h1><strong>GS</strong> <span>/</span> Interior Design Studio</h1>
+                <p>Discover the art of interior design, crafted with elegance and charm.</p>
+                <p>9718632171,9718632400</p>
+                  <a href="#about" class="btn btn-custom btn-lg page-scroll">Learn More</a>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div id="intro4" class="intro active">
+  <div class="overlay">
+      <div class="container">
+          <div class="row">
+              <div class="intro-text">
+                <h1><strong>GS</strong> <span>/</span> Interior Design Studio</h1>
+                <p>Discover the art of interior design, crafted with elegance and charm.</p>
+                <p>9718632171,9718632400</p>
+                  <a href="#about" class="btn btn-custom btn-lg page-scroll">Learn More</a>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
 <script>
-    function toggleDivs() {
-        const intro1 = document.getElementById('intro1');
-        const intro2 = document.getElementById('intro2');
+  const backgrounds = [
+      'url(../images/intro-bg.jpg)',
+      'url(../images/one.jpeg)',
+      'url(../images/two.jpeg)',
+      'url(../images/three.jpeg)'
+  ];
 
-        if (intro1.classList.contains('active')) {
-            intro1.classList.remove('active');
-            intro2.classList.add('active');
-        } else {
-            intro1.classList.add('active');
-            intro2.classList.remove('active');
-        }
-    }
+  function toggleDivs() {
+      const intros = document.querySelectorAll('.intro');
+      let activeIndex = -1;
 
-    setInterval(toggleDivs, 3000);
+      intros.forEach((intro, index) => {
+          if (intro.classList.contains('active')) {
+              activeIndex = index;
+          }
+          intro.classList.remove('active');
+      });
+
+      const nextIndex = (activeIndex + 1) % intros.length;
+      intros[nextIndex].classList.add('active');
+
+      intros.forEach((intro, index) => {
+          intro.style.background = backgrounds[index] + ' no-repeat center bottom';
+          intro.style.backgroundSize = 'cover';
+      });
+  }
+
+  setInterval(toggleDivs, 3000);
 </script>
+
 </header>
 <div id="about">
   <div class="container">
