@@ -9,6 +9,25 @@
 <script src="assets/js/html5shiv.min.js"></script>
 <script src="assets/js/respond.min.js"></script>
 <![endif]-->
+<style>
+  .intro { display: none; }
+  .intro.active { display: block; }
+  .overlay {
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 20px;
+  }
+  .container {
+      text-align: center;
+  }
+  .btn-custom {
+      background-color: #000;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+  }
+</style>
 <style type="text/css">
 #freecssfooter{display:block;width:100%;padding:120px 0 20px;overflow:hidden;background-color:transparent;z-index:5000;text-align:center;}
 #freecssfooter div#fcssholder div{display:none;}
@@ -47,20 +66,52 @@
   </div>
 </nav>
 <header id="header">
-  <div class="intro">
+  <div id="intro1" class="intro active">
     <div class="overlay">
-      <div class="container">
-        <div class="row">
-          <div class="intro-text">
-            <h1><strong>GS</strong> <span>/</span> Interior Design Studio</h1>
-            <p>Discover the art of interior design, crafted with elegance and charm.</p>
-            
-            <p>9718632171,9718632400</p>
-            <a href="#about" class="btn btn-custom btn-lg page-scroll">Learn More</a></div>
+        <div class="container">
+            <div class="row">
+                <div class="intro-text">
+                    <h1><strong>GS</strong> <span>/</span> Interior Design Studio</h1>
+                    <p>Discover the art of interior design, crafted with elegance and charm.</p>
+                    <p>9718632171,9718632400</p>
+                    <a href="#about" class="btn btn-custom btn-lg page-scroll">Learn More</a>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
+
+<div id="intro2" class="intro">
+    <div class="overlay">
+        <div class="container">
+            <div class="row">
+                <div class="intro-text">
+                    <h1><strong>farish slider dekho</strong> <span>/</span> Interior Design Studio</h1>
+                    <p>Discover the art of interior design, crafted with elegance and charm.</p>
+                    <p>9718632171,9718632400</p>
+                    <a href="#about" class="btn btn-custom btn-lg page-scroll">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleDivs() {
+        const intro1 = document.getElementById('intro1');
+        const intro2 = document.getElementById('intro2');
+
+        if (intro1.classList.contains('active')) {
+            intro1.classList.remove('active');
+            intro2.classList.add('active');
+        } else {
+            intro1.classList.add('active');
+            intro2.classList.remove('active');
+        }
+    }
+
+    setInterval(toggleDivs, 3000);
+</script>
 </header>
 <div id="about">
   <div class="container">
